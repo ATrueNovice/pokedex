@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //Delegate = We will be making changes on behalf of the UI View, DataSource = THis is where data will originate,  DelegateFlowLayout = Modify and set layout for collection view
 
@@ -16,6 +17,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collection: UICollectionView!
 
     var pokemon = [Pokemon]()
+    var musicPlayer: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.delegate = self
 
         parsePokemonCSV()
+        initAudio()
     }
+
+        // Setting up aduio, path, how to, and name.
+    func initAudio() {
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
+
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+        }
+
+            catch let err as NSError {
+                print(err.debugDescription)
+            }
+        }
 
 
     func parsePokemonCSV() {
@@ -99,5 +118,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return CGSize(width: 105, height: 105)
     }
 
+        //TUrn music on and off
+    @IBAction func musicBtnPressed(_ sender: Any) {
+
+        if musicPlayer.isPlaying{
+            musicPlayer.pause()
+
+        } else {
+            musicPlayer.play()
+        }
+
+    }
 }
 

@@ -6,9 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pokemon Hollow.ttf">
+            <string>PokemonHollowNormal</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -24,12 +28,39 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ngv-md-hkX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0w-KI-3Zw">
+                                        <rect key="frame" x="300" y="19" width="40" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="224-kd-LCB"/>
+                                            <constraint firstAttribute="height" constant="36" id="a0m-wp-cUa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="music"/>
+                                        <connections>
+                                            <action selector="musicBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yAf-9w-wWR"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqO-Fj-d8d">
+                                        <rect key="frame" x="113" y="21" width="149" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="22l-SU-1yr"/>
+                                            <constraint firstAttribute="width" constant="149" id="Ykw-X0-i0V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonHollowNormal" family="Pokemon Hollow" pointSize="28"/>
+                                        <color key="textColor" red="0.99252898339999995" green="1" blue="0.98587407120000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="M0w-KI-3Zw" secondAttribute="bottom" constant="8" id="6f9-dc-q6d"/>
                                     <constraint firstAttribute="height" constant="63" id="FbA-Pn-k9T"/>
+                                    <constraint firstAttribute="trailing" secondItem="M0w-KI-3Zw" secondAttribute="trailing" constant="35" id="NjJ-Zw-pnA"/>
+                                    <constraint firstItem="qqO-Fj-d8d" firstAttribute="centerX" secondItem="Ngv-md-hkX" secondAttribute="centerX" id="gdc-mg-DpM"/>
+                                    <constraint firstAttribute="bottom" secondItem="qqO-Fj-d8d" secondAttribute="bottom" constant="8" id="qgb-T3-l0O"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="4Zj-vn-8wv">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="4Zj-vn-8wv">
                                 <rect key="frame" x="0.0" y="63" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="tus-l2-auv"/>
@@ -49,42 +80,13 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="65V-SV-EQU" customClass="PokeCell" customModule="PokeDex" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="of9-G0-wKH">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="pwd-jm-oh6">
-                                                    <rect key="frame" x="8" y="8" width="89" height="80"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="95J-E3-3Ft"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charmander" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ni0-Au-lw3">
-                                                    <rect key="frame" x="0.0" y="88" width="105" height="17"/>
-                                                    <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="12"/>
-                                                    <color key="textColor" red="0.99252898342126095" green="1" blue="0.98587407123520854" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="ni0-Au-lw3" firstAttribute="leading" secondItem="65V-SV-EQU" secondAttribute="leading" id="08W-7Z-Axv"/>
-                                            <constraint firstAttribute="bottom" secondItem="ni0-Au-lw3" secondAttribute="bottom" id="6XN-DQ-TDY"/>
-                                            <constraint firstItem="pwd-jm-oh6" firstAttribute="leading" secondItem="65V-SV-EQU" secondAttribute="leadingMargin" id="DHA-ok-HXg"/>
-                                            <constraint firstItem="pwd-jm-oh6" firstAttribute="top" secondItem="65V-SV-EQU" secondAttribute="topMargin" id="YMa-il-vuX"/>
-                                            <constraint firstItem="ni0-Au-lw3" firstAttribute="top" secondItem="pwd-jm-oh6" secondAttribute="bottom" id="cVk-vl-Hzl"/>
-                                            <constraint firstItem="pwd-jm-oh6" firstAttribute="trailing" secondItem="65V-SV-EQU" secondAttribute="trailingMargin" id="mcF-XN-f72"/>
-                                            <constraint firstAttribute="trailing" secondItem="ni0-Au-lw3" secondAttribute="trailing" id="qMI-YM-TPj"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="nameLbl" destination="ni0-Au-lw3" id="jkj-jq-DnP"/>
-                                            <outlet property="thumbImg" destination="pwd-jm-oh6" id="2xQ-wJ-s6u"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -117,7 +119,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4" width="120" height="120"/>
+        <image name="music" width="100" height="100"/>
         <image name="poke bg" width="1920" height="1200"/>
     </resources>
 </document>

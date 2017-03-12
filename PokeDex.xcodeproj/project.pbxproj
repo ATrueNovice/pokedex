@@ -18,6 +18,7 @@
 		D5BB34111E5D144F00B624D2 /* pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB34101E5D144F00B624D2 /* pokemon.swift */; };
 		D5BB34141E6E458F00B624D2 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB34131E6E458F00B624D2 /* PokeCell.swift */; };
 		D5BB34161E6E5FB500B624D2 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5BB34151E6E5FB500B624D2 /* csv.swift */; };
+		D5E2816F1E75E0E80025123D /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2816E1E75E0E80025123D /* PokemonDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D5BB34101E5D144F00B624D2 /* pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pokemon.swift; sourceTree = "<group>"; };
 		D5BB34131E6E458F00B624D2 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 		D5BB34151E6E5FB500B624D2 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		D5E2816E1E75E0E80025123D /* PokemonDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D5BB33FD1E5D095700B624D2 /* ViewController.swift */,
+				D5E2816E1E75E0E80025123D /* PokemonDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				D5BB34141E6E458F00B624D2 /* PokeCell.swift in Sources */,
 				D5BB34111E5D144F00B624D2 /* pokemon.swift in Sources */,
 				D5BB33FE1E5D095700B624D2 /* ViewController.swift in Sources */,
+				D5E2816F1E75E0E80025123D /* PokemonDetailVC.swift in Sources */,
 				D5BB33FC1E5D095700B624D2 /* AppDelegate.swift in Sources */,
 				D5BB34161E6E5FB500B624D2 /* csv.swift in Sources */,
 			);
